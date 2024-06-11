@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="stylesheets/aboutus.css" />
+		<script
+			src="https://kit.fontawesome.com/f93354d676.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<link rel="stylesheet" href="stylesheets/pagination.css" />
+		<title>Aboutus</title>
+		<style>
+			.aboutusnav {
+				background-color: #369afe;
+				border-radius: 0% 50% 0% 50%;
+				color: white !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="previewImg">
+			<svg
+				class="close"
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-6 w-6"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+				/>
+			</svg>
+			<img src="" class="previewimg" />
+		</div>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
+
+		<section class="video">
+			<video class="vidAbout" autoplay muted loop>
+				<source src="../images/aboutus/CLASSVIDEO.mp4" type="video/mp4" />
+			</video>
+			<h1>EXPECT THE BEST...</h1>
+		</section>
+		<!-- visionmission -->
+		<section class="missionNew">
+			<div class="ourvision">
+				<h1>OUR VISION</h1>
+				<p>
+					To be India's best training Institute to impart understanding and
+					application-based education to the young talents and carving them into
+					creative human resources who are having sufficient knowledge, with
+					competitive edge, National Integrity and social responsibility and who
+					are the input for India's top Medical Engineering and professional
+					colleges.
+				</p>
+			</div>
+			<div class="ourmission">
+				<h1>OUR MISSION</h1>
+				<p>
+					1. To give awareness on competitive exams among the school students
+					and develop science and math foundation in school going children.
+				</p>
+				<p>
+					2. To impart state of art training for the competitive exams such as
+					NEET, JEE etc., to the students and develop competitive spirit to set.
+				</p>
+			</div>
+		</section>
+		<!-- leaders -->
+		<section class="leaders">
+			<h1>Our Founder</h1>
+			<div class="leaderimg">
+				<span class="imageabout">
+					<img src="images/aboutus/TPS.png" alt="" />
+				</span>
+				<span class="content1">
+					<pre style="white-space: pre-wrap"><%= ourFounderContent1 %></pre>
+				</span>
+			</div>
+			<div class="leadervideo">
+				<span class="content2">
+					<pre style="white-space: pre-wrap"><%= ourFounderContent2 %></pre>
+				</span>
+				<span class="leadvideo">
+					<iframe
+						class="iframe1"
+						src="<%= url %>"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</span>
+			</div>
+		</section>
+
+		<h1 class="ourjourney">Our Journey So Far</h1>
+		<section class="timelineNew">
+			<img
+				class="timelineImg"
+				src="../images/aboutus/Group19.png"
+				class="book"
+				alt=""
+			/>
+			<div class="timelineContent">
+				<!-- <div class="timelineIcon">
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-first-success-flatart-icons-flat-flatarticons.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-trophy-reward-and-badges-justicon-flat-justicon-1.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/color/64/000000/student-female.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
+
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-first-success-flatart-icons-flat-flatarticons.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
+        </div> -->
+				<div class="timelinePara">
+					<% content.forEach(cont=> { %>
+					<p><%= cont.content %> - <%= cont.year %></p>
+					<% }) %>
+				</div>
+			</div>
+		</section>
+		<section class="galleryNew">
+			<h1 class="galleryHead">Gallery</h1>
+			<select
+				class="form-select form-select-lg mb-3 dropdownNeet"
+				aria-label=".form-select-lg example"
+				data-select=""
+			>
+				<% folderArray.forEach((folder,i)=> { %>
+				<option
+					class="opt"
+					value="<%= folder %>"
+					selected="<%=i==0?true:false%>"
+					data-year="<%= folder %>"
+				>
+					NEET <%= folder %>
+				</option>
+				<% }) %>
+			</select>
+
+			<div class="pagination">
+				<section class="galleryMain tableList"></section>
+				<div class="pagination-block">
+					<span class="pageButton outline-none" id="button_prev"><</span>
+					<span id="page_number" class="outline-none"></span>
+					<span class="pageButton outline-none" id="button_next">></span>
+				</div>
+			</div>
+		</section>
+
+		<%- include('./layout/footer') %>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="javascripts/aboutus.js"></script>
+		<script src="javascripts/nav.js"></script>
+		<script src="javascripts/common.js"></script>
+		<script src="javascripts/chatbot.js"></script>
+	</body>
+</html>

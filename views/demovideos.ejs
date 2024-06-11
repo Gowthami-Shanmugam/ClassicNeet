@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="stylesheets/demovideos.css" />
+		
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<link rel="shortcut icon" href="../../images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
+
+		<title>Demo Videos</title>
+		<style>
+			.Demovideosnav {
+				background-color: #369afe;
+				border-radius: 0% 50% 0% 50%;
+				color: white !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
+
+		<section class="Getyourvideos">
+			<img src="<%= img.sliderimg %>" alt="" />
+		</section>
+		<div class="heading"><h1>Demo Videos</h1></div>
+
+		<div class="grid">
+			<% link.forEach((link,index)=> { %>
+			<div class="griditem">
+				<div class="gridbox">
+					<iframe
+						class="video"
+						src="<%= link %>"
+						title="YouTube video player"
+						frameborder="0"
+						allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+			</div>
+			<% }) %>
+		</div>
+		<section class="app">
+			<div class="apppage">
+				<!-- phone -->
+				<div class="appLeft">
+					<img src="images/aboutus/phonebg.png" class="Messaging" />
+				</div>
+				<img src="images/aboutus/Vector2.png" class="vector3" />
+                <img src="images/aboutus/Vector1.png" class="Vector2" />
+                <img src="images/aboutus/Vector.png" class="vector1" />
+				<div class="appRight">
+					<h2>Login as a <span class="user"><b>GUEST USER</b></span> Watch Our FREE Demo Online classes</h2>
+					<a
+						href="https://play.google.com/store/apps/details?id=eduapplet.classicneet&hl=en_IN&gl=US" target="_blank"
+						><img src="images/aboutus/download.jpg"
+					/></a>
+				</div>
+			</div>
+		</section>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+		<script src="javascripts/nav.js"></script>
+		<script src="../javascripts/courses.js"></script>
+		<script src="../javascripts/common.js"></script>
+		<%- include('./layout/footer') %>
+		<script src="javascripts/chatbot.js"></script>
+	</body>
+</html>
